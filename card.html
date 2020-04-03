@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>期许</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+  <img class="id-i" src="./images/card-banner.jpg" alt="">
+  <img src="./images/card-b.png" alt="" class="id-bottom fadeTop">
+  <section class='card-content'>
+    <div class="card-title fadeTop reveal ">
+      致敬一线医护 温暖整座杭州
+    </div>
+
+    <div class="card-info">
+      <div class="card-img fadeTop">
+        <img class="card-i" src="./images/card-info.png" alt="">
+        <span class="card-name">meiya～～</span>
+      </div>
+    </div>
+    <a class="card-btn fadeTop" href="prize.html">
+      点击保存图片 领取下午茶
+    </a>
+  </section>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function () {
+      var params = new URLSearchParams(location.search)
+      var expect = params.get('expect')
+      var contents = expect.split(' ')
+      var p = ''
+      for (var i = 0; i < contents.length; i ++) {
+        p += '<div class="expect-p fadeTop ">' + contents[i] + '</div>'
+      }
+      $('.card-info').append(p)
+
+
+      reveal()
+      function reveal() {
+        var delay = .3
+        var revealText = document.querySelector('.reveal')
+        var letters = revealText.textContent.split('').filter(function (i) {
+          return i != ' '
+        })
+        revealText.textContent = ''
+        var middle = letters.length / 2
+        var frag = document.createDocumentFragment()
+        letters.forEach(function (letter, i) {
+          var span = document.createElement('span')
+          span.textContent = letter
+          span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + 's'
+          frag.appendChild(span)
+        })
+        revealText.appendChild(frag)
+      }
+    })
+  </script>
+</body>
+</html>

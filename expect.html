@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>期许</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/expect.css">
+</head>
+<body>
+  <img class="id-i" src="./images/expect-banner.png" alt="">
+  <img src="./images/expect-b.png" alt="" class="id-bottom fadeTop">
+  <section class='expect-content'>
+    <div class="expect-title fadeTop">
+      <h3 class="expect-h3 reveal">写下美好期许</h3>
+      <h3 class="expect-h3 reveal">赠你一场春暖花开</h3>
+    </div>
+
+    <div class="expect-paras fadeTop">
+      <div class="expect-p reveal">你对疫情过后有哪些美好期盼</div>
+      <div class="expect-p reveal">亦或是对杭州、对战疫一线的逆行者们的祝福</div>
+    </div>
+
+    <!-- 输入框 -->
+    <div class="input-fill-x fadeTop">
+      <input class="input-control input-fill" placeholder="期许" name='expect'>
+      <label class="input-label">写下我的期许...(20字以内）</label>
+    </div>
+  
+    <div class="expect-lists fadeTop">
+      <div class="expect-list active">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont">小火锅、波霸奶茶、</div>
+          <div class="expect-list-cont">烧烤... 我来啦!</div>
+        </div>
+      </div>
+      <div class="expect-list">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont">三月的期许, </div>
+        <div class="expect-list-cont">在夏天来临前都要实现。</div>
+        </div>
+      </div>
+      <div class="expect-list">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont">待春暖花开, </div>
+          <div class="expect-list-cont">一起去西湖边走一走吧!</div>
+        </div>
+      </div>
+      <div class="expect-list">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont">春回大地, </div>
+        <div class="expect-list-cont">我们坚信阴霾终将散去。</div>
+        </div>
+      </div>
+      <div class="expect-list">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont"> 平安渡劫,</div>
+        <div class="expect-list-cont"> 杭州奥利给~</div>
+        </div>
+      </div>
+      <div class="expect-list">
+        <div class="expect-transfrom">
+          <div class="expect-list-cont">百毒不侵,</div>
+          <div class="expect-list-cont">你们是最棒的!</div>
+        </div>
+      </div>
+    </div>
+      <a class="expect-btn fadeTop" href="card.html">
+        生成我的期许卡片
+      </a>
+    
+    <img class="expect-cc fadeTop" src="./images/expect-cc.png" alt="">
+  </section>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(function () {
+        $('.expect-list').each(function () {
+          $(this).click(function () {
+            if ($('.input-label').text() != '写下我的期许...(20字以内）') {
+            $('.input-label').text('写下我的期许...(20字以内）').css('color', '#a2a9b6')
+          }
+            $(this).siblings().removeClass('active').end().addClass('active')
+            $('.input-fill').val($(this).text().trim().replace(/\s+/g, ' '))
+          })
+        })
+
+        $('.expect-btn').click(function (e) {
+          e.preventDefault()
+          let expect = $('.input-fill').val()
+          if (expect.length == 0) {
+            $('.input-label').text('请输入您的期许').css('color', 'red')
+            return false
+          }
+          console.log(encodeURIComponent(expect));
+          location.href = './card.html?expect=' + encodeURIComponent(expect)
+        })
+        $('.input-fill').focus(function () {
+          if ($('.input-label').text() != '写下我的期许...(20字以内）') {
+            $('.input-label').text('写下我的期许...(20字以内）').css('color', '#a2a9b6')
+          }
+        })
+
+        reveal()
+        function reveal() {
+        var delay = .3
+        var revealTexts = document.querySelectorAll('.reveal')
+        revealTexts.forEach(function (revealText) {
+          var letters = revealText.textContent.split('').filter(function (i) {
+            return i != ' '
+          })
+          revealText.textContent = ''
+          var middle = letters.length / 2
+          var frag = document.createDocumentFragment()
+          letters.forEach(function (letter, i) {
+            var span = document.createElement('span')
+            span.textContent = letter
+            span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + 's'
+            frag.appendChild(span)
+          })
+          revealText.appendChild(frag)
+          })
+      }
+      })
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,80 @@
+.id-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 2.6rem;
+  z-index: 1;
+}
+.id-title {
+  text-align: center;
+  line-height: .54rem;
+  font-size: .32rem;
+  color: #fff;
+  background: url(../images/id-01.png) no-repeat center/ 4.3rem .52rem;
+}
+.id-top {
+  position: absolute;
+}
+.id-load {
+  animation-delay: .2s;
+}
+.id-loading {
+  display: inline-block;
+  height: .18rem;
+  width: 1.6rem;
+  max-width: 4rem;
+  background-color: #e2d98a;
+  margin-left: 1.124rem;
+  margin-top: 1.96rem;
+  border-radius: .09rem 0 0 .09rem;
+}
+.id-flower {
+  position: absolute;
+    margin-left: -.2rem;
+    margin-top: 1.8rem;
+}
+.id-load-i {
+  width: 80%;
+  margin-top: 1.3rem;
+  margin-left: .4rem;
+}
+.id-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: .28rem;
+  bottom: 3.8rem;
+  width: fit-content;
+}
+.id-h3 {
+  font-weight: bolder;
+}
+.id-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.1rem;
+  margin: 0 auto;
+  text-align: center;
+  width: 3.8rem;
+  line-height: .7rem;
+  font-size: .28rem;
+  color: #fff;
+  font-weight: 400;
+  background: url(../images/id-btn.png) no-repeat center/ 3.8rem .78rem;
+}
+.id-cc {
+  position: absolute;
+  width: 36%;
+  bottom: 1rem;
+}
+.id-cc,
+.id-btn,
+.id-bottom,
+.id-desc {
+  animation-delay: .4s;
+}

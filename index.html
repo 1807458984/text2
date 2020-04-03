@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>首页</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <img class="id-i" src="./images/id-banner.jpg" alt="">
+  <img class="id-bottom fadeTop" src="./images/id-bottom.png" alt="">
+  <section class='id-content'>
+    <div class="id-title reveal fadeTop">
+      致敬一线医护 温暖整座杭州
+    </div>
+    <div class="id-load fadeTop">
+      <div class="id-top">
+        <span class="id-loading"></span>
+        <img class="id-flower" src="./images/id-flower.png" alt="">
+      </div>
+      <img class="id-load-i" src="./images/id-loading.png" alt="">
+    </div>
+    <div class="id-desc fadeTop">
+      <h3 class="id-h3 slide-bar">为医护人员助力</h3>
+      <h3 class="id-h3 slide-bar">人保请你喝下午茶</h3>
+    </div>
+
+    <a href="expect.html" class="id-btn fadeTop">
+      写下期许 免费领取下午茶
+    </a>
+    
+    <img class="id-cc fadeTop" src="./images/id-cdc.png" alt="">
+  </section>
+  <script src="/js/jquery.js"></script>
+  <script>
+    $(function () {
+      reveal()
+      function reveal() {
+        var delay = .3
+        var revealText = document.querySelector('.reveal')
+        var letters = revealText.textContent.split('').filter(function (i) {
+          return i != ' '
+        })
+        revealText.textContent = ''
+        var middle = letters.length / 2
+        var frag = document.createDocumentFragment()
+        letters.forEach(function (letter, i) {
+          var span = document.createElement('span')
+          span.textContent = letter
+          span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + 's'
+          frag.appendChild(span)
+        })
+        revealText.appendChild(frag)
+      }
+    })
+
+  </script>
+</body>
+</html>

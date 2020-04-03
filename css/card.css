@@ -1,0 +1,70 @@
+.card-content {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 2.6rem;
+  position: absolute;
+}
+.card-title {
+  font-size: .32rem;
+  color: #fff;
+  line-height: .58rem;
+  text-align: center;
+  width: 4.3rem;
+  margin: 0 auto;
+  background: url(../images/card-01.png) no-repeat center/100%;
+}
+.card-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5.2rem;
+  padding-left: 1.4rem;
+}
+.card-img {
+  display: flex;
+  align-items: center;
+  margin-top: .55rem;
+  margin-bottom: .18rem;
+}
+.card-i {
+  margin-left: .08rem;
+  width: .65rem;
+  height: .65rem;
+  border: .04rem solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 .06rem .06rem rgba(0, 0, 0, 0.3);
+}
+.card-name {
+  margin-left: .18rem;
+  color: #fff;
+}
+.expect-p {
+  color: #fff;
+  font-size: .24rem;
+  font-weight: bold;
+  width: 12em;
+}
+.card-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.2rem;
+  width: 3.6rem;
+  margin: 0 auto;
+  line-height: .7rem;
+  font-size: .28rem;
+  color: #fff;
+  text-align: center;
+  background: url(../images/card-btn.png) no-repeat center/100%;
+}
+.card-btn {
+  animation-delay: 1s;
+}
+.card-img {
+  animation-delay: .2s;
+}
+.expect-p {
+  animation-delay: .6s;
+}

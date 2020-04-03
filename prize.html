@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>抽奖</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/prize.css">
+</head>
+<body>
+  <img class="id-i" src="./images/prize-banner.jpg" alt="">
+  <img src="./images/prize-b.png" alt="" class="id-bottom fadeTop">
+  <div class="rules">
+    <a href="javasrcipt: ;" class="rule">规则说明</a>
+    <br>
+    <a href="javasrcipt: ;" class="rule">我的奖品</a>
+  </div>
+  <section class='normal-content'>
+    <div class="normal-title fadeTop reveal">
+      致敬一线医护 温暖整座杭州
+    </div>
+    <div class="prize-btn-wrap fadeTop">
+      <img class="prize-btn-i" src="./images/takeout.png" alt="">
+      <img class="prize-btn-hand" src="./images/prize-hand.png" alt="">
+    </div>
+     <a href="" class="prize-btn fadeTop">邀请好友一起</a>
+     <img class="prize-cc fadeTop" src="./images/prize-cc.png" alt="">
+    </div>
+  </section>
+  <div class="rules-intro">
+    <img class="close" src="./images/close.png" alt="">
+    <div class="rules-content">
+      活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介
+    </div>
+  </div>
+  <div class="rules-me">
+    <img class="me-close" src="./images/close.png" alt="">
+    <div class="rules-me-content">
+      <h3 class="rules-me-h3">咖啡券</h3>
+      <span class="rules-me-warn">请在活动有效期使用</span>
+    </div>
+  </div>
+
+  <div class="register">
+    <img class="register-close" src="./images/close.png" alt="">
+    <div class="register-content">
+      注册高级用户
+    </div>
+  </div>
+  <div class="login">
+    <img class="login-close" src="./images/close.png" alt="">
+    <form class="form" action="">
+      <p class="form-p">
+        <input name="name" class="form-input" type="text" placeholder="姓名">
+      </p>
+      <p class="form-p">
+        <input phone='phone' class="form-input" type="text" placeholder="电话">
+      </p>
+      <button class="form-btn">确认提交</button>
+    </form>
+  </div>
+
+  <script src="./js/jquery.js"></script>
+  <script>
+    $(function () {
+      $('.rule:first-child').click(function () {
+        $('.rules-intro').fadeIn()
+        landInTexts()
+        $('.close').click(function () {
+          $('.rules-intro').fadeOut()
+        })
+      })
+      $('.rule:last-child').click(function () {
+        $('.rules-me').fadeIn()
+        $('.me-close').click(function () {
+          $('.rules-me').fadeOut()
+        })
+      })
+      $('.prize-btn-i').click(function () {
+        $('.register').fadeIn()
+        $('.register-content').click(function () {
+          $('.register').fadeOut()
+          $('.login').fadeIn()
+          $('.login-close').click(function () {
+          $('.login').fadeOut()
+        })
+        })
+        $('.register-close').click(function () {
+          $('.register').fadeOut()
+        })
+      })
+
+      function landInTexts() {
+        var landInTexts = document.querySelector('.rules-content')
+      var letters = landInTexts.textContent.split('')
+      let frag = document.createDocumentFragment()
+      landInTexts.textContent = ''
+      letters.forEach((letter, i) => {
+        var span = document.createElement('span')
+        span.classList.add('span')
+        span.textContent = letter
+        span.style.animationDelay = i * .025 + 's'
+        frag.appendChild(span)
+      })
+      landInTexts.appendChild(frag)
+      }
+      
+      reveal()
+      function reveal() {
+        var delay = .3
+        var revealText = document.querySelector('.reveal')
+        var letters = revealText.textContent.split('').filter(function (i) {
+          return i != ' '
+        })
+        revealText.textContent = ''
+        var middle = letters.length / 2
+        var frag = document.createDocumentFragment()
+        letters.forEach(function (letter, i) {
+          var span = document.createElement('span')
+          span.textContent = letter
+          span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + 's'
+          frag.appendChild(span)
+        })
+        revealText.appendChild(frag)
+      }
+    })
+  </script>
+</body>
+</html>
